@@ -29,6 +29,7 @@ My project includes the following files:
 * drive.py for driving the car in autonomous mode
 * model.h5 containing a trained convolution neural network 
 * writeup_report.md summarizing the results
+* run1.mp4 recording the successful autonomous drive of the vehicle on track one.
 
 #### 2. Submission includes functional code
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
@@ -48,13 +49,13 @@ The model.py file contains the code for training and saving the convolution neur
 
 My overall strategy for deriving a model architecture was to experiment on various architectures with different level of complexity and find out a capble model that not is not over complex.
 
-My first step was to use convolution neural network models similar to the Lenet and more complex NVIDIA model. I thought these two model might be appropriate because both of them are powerful networks. The lenet was successfully used to classify signs in previous project and the NVIDIA is also intended for much difficult tasks.
+My first thought was to use convolution neural network models similar to the LeNet or more complex NVIDIA model. I thought these two model might be appropriate because both of them are powerful networks. The LeNet was successfully used to classify signs in previous project and the NVIDIA is also intended for much difficult tasks.
 
-In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set (splitrate 0.2). The best performance of each models were measued according to the best validation loss before overfitting occur. Overfitting can be identified when the the train loss keeps reducing while the validation loss begins to fluctuate around a value or even increasing again.
+In order to gauge how well the model was working, I split my images and steering angles dataset into training and validation set (split rate 0.2). The best performance of each models were measued according to the best validation loss before overfitting occurs. Overfitting can be identified when the the train loss keeps reducing while the validation loss begins to fluctuate around a certain value or even increase again.
 
-After training, both networks showed samilar performance of validation loss (around 0.025), therefroe I choose to continue with the lenet model as it's simpler. 
+After training, both networks showed samilar performance of validation loss (around 0.025), therefroe I choose to continue with the LeNet model as it's simpler. 
 
-Then I tried to reduce parameters further by reduce the depth of convolutional layers and finally got the architecture shown above, which keeps same accuracy.
+Then I tried to reduce parameters further by reduce the depth of convolutional layers and finally got the architecture shown above, which keeps same level of accuracy.
 
 To combat the overfitting, I add maxpooling layers between convolutional layers and dropout layer between fully connected layers.
 

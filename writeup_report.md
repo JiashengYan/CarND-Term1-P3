@@ -43,6 +43,8 @@ The successful driving on track one was recorded in the following youtube video:
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10"/></a>
 </p>
 
+
+
 #### 3. Submission code is usable and readable
 
 The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
@@ -56,6 +58,18 @@ The model.py file contains the code for training and saving the convolution neur
 My overall strategy for deriving a model architecture was to experiment on various architectures with different level of complexity and find out a capble model that not is not over complex.
 
 My first thought was to use convolution neural network models similar to the LeNet or more complex NVIDIA model. I thought these two model might be appropriate because both of them are powerful networks. The LeNet was successfully used to classify signs in previous project and the NVIDIA is also intended for much difficult tasks.
+
+
+
+<p align="center">
+  <img src="https://github.com/JiashengYan/CarND-Term1-P3/blob/master/LeNet.svg" title="LeNet Architecture">
+  <figcaption>LeNet Architecture</figcaption>
+  <img src="https://github.com/JiashengYan/CarND-Term1-P3/blob/master/NVIDIA%20.svg" title="NVIDIA Architecture">
+  <figcaption>NVIDIA Architecture</figcaption>
+</p>
+  
+
+
 
 In order to gauge how well the model was working, I split my images and steering angles dataset into training and validation set (split rate 0.2). The best performance of each models were measued according to the best validation loss before overfitting occurs. Overfitting can be identified when the the train loss keeps reducing while the validation loss begins to fluctuate around a certain value or even increase again.
 
@@ -72,6 +86,11 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 #### 2. An appropriate model architecture has been employed
 
 My model consists of three convolution layers and three fully connected layers (code line 100 - 121):
+
+
+<p align="center">
+  <img src="https://github.com/JiashengYan/CarND-Term1-P3/blob/master/model.svg" >
+</p>
 
 * Convolutional Layer 1 : 5x5 Filter with depth 3, activation function:elu, Maximalpooling(4x4)
 * Convolutional Layer 2 : 3x3 Filter with depth 6, activation function:elu, Maximalpooling(4x4)

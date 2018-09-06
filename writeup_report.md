@@ -36,6 +36,12 @@ Using the Udacity provided simulator and my drive.py file, the car can be driven
 ```
 python drive.py model.h5
 ```
+The successful driving on track one was recorded in the following youtube video:
+<p align="center">
+<a href="https://www.youtube.com/watch?v=44zP_gN38Q4&feature=youtu.be
+" target="_blank"><img src="https://i.ytimg.com/vi/44zP_gN38Q4/1.jpg?time=1536231135663" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10"/></a>
+</p>
 
 #### 3. Submission code is usable and readable
 
@@ -91,7 +97,7 @@ The dataset was splited into training data and validation data, so that the mode
 
 Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving (both in clockwise and anti-clockwise direction), recovering from the left and right sides of the road.
 
-To capture good driving behavior, I first recorded two laps on track one in clockwise dirction and two laps in anti-clockwise direction using center lane driving. 
+To capture good driving behavior, I first recorded two laps on track one in clockwise dirction and two laps in anti-clockwise direction using center lane driving. The driving behavior was recorded in both directions to balance the dataset as the vehicle tends to turn left more often than right in the anti-clockwise direction on track one. 
 
 I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to return back to the center lane for the cases that it drive away from center by accidents. 
 
@@ -101,7 +107,7 @@ The images from left-mounted and righ-mounted cameras are also utilized from tra
 * images form left side: steering_angle + correction
 * images form right side: steering_angle - correction
 
-After the collection process, I had 38250 number of images. I then preprocessed this data by conerting images to grayscale and crop the upper and lower part off as both parts contains little relavant information.
+After the collection process, I had 38250 number of images. I then preprocessed this data by conerting images to grayscale as it appears to me that the boundary of road can be recognized in grayscale as good as in rgb. Then I cropped the upper and lower part off as both parts contains little relavant information.
 
 I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 

@@ -57,7 +57,7 @@ The model.py file contains the code for training and saving the convolution neur
 
 My overall strategy for deriving a model architecture was to experiment on various architectures with different level of complexity and find out a capble model that not is not over complex.
 
-My first thought was to use convolution neural network models similar to the LeNet or more complex NVIDIA model. I thought these two model might be appropriate because both of them are powerful networks. The LeNet was successfully used to classify signs in previous project and the NVIDIA is also intended for much difficult tasks.
+My first thought was to use convolution neural network models similar to the [LeNet](http://yann.lecun.com/exdb/lenet/) or more complex [NVIDIA model](https://devblogs.nvidia.com/parallelforall/deep-learning-self-driving-cars/). I thought these two model might be appropriate because both of them are powerful networks. The LeNet was successfully used to classify signs in previous project and the NVIDIA is also intended for much difficult tasks.
 
 
 
@@ -75,8 +75,10 @@ In order to gauge how well the model was working, I split my images and steering
 
 After training, both networks showed samilar performance of validation loss (around 0.025), therefroe I choose to continue with the LeNet model as it's simpler. 
 
-Then I tried to reduce parameters further by reduce the depth of convolutional layers and finally got the architecture shown above, which keeps same level of accuracy.
-
+Then I tried to reduce parameters further by reduce the depth of convolutional layers and finally got the architecture shown below, which keeps same level of accuracy.
+<p align="center">
+  <img src="https://github.com/JiashengYan/CarND-Term1-P3/blob/master/model.svg" >
+</p>
 To combat the overfitting, I add maxpooling layers between convolutional layers and dropout layer between fully connected layers.
 
 The final step was to run the simulator to see how well the car was driving around track one. There one spot right after the bridge where the vehicle fell off the track as the lane boundary at that part is not as clear as other parts. To improve the driving behavior in these cases, I collected more data of the vehicle driving through that part of roads.
@@ -86,11 +88,6 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 #### 2. An appropriate model architecture has been employed
 
 My model consists of three convolution layers and three fully connected layers (code line 100 - 121):
-
-
-<p align="center">
-  <img src="https://github.com/JiashengYan/CarND-Term1-P3/blob/master/model.svg" >
-</p>
 
 * Convolutional Layer 1 : 5x5 Filter with depth 3, activation function:elu, Maximalpooling(4x4)
 * Convolutional Layer 2 : 3x3 Filter with depth 6, activation function:elu, Maximalpooling(4x4)
@@ -135,3 +132,8 @@ I used this training data for training the model. The validation set helped dete
 The model used an adam optimizer, so the learning rate was not tuned manually (default learning rate 0.001 shows best performance).
 
 ![sample_dataset](https://github.com/JiashengYan/CarND-Term1-P3/blob/master/Train_Loss_Curve.png)
+
+## References
+- LeNet: http://yann.lecun.com/exdb/lenet/
+- NVIDIA model: https://devblogs.nvidia.com/parallelforall/deep-learning-self-driving-cars/
+- Udacity Self-Driving Car Simulator: https://github.com/udacity/self-driving-car-sim
